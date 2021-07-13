@@ -5,3 +5,10 @@
     align-items: center;
     text-align: center;
 }
+.walletinput{
+    border-bottom: 2px solid black;
+    border: none; 
+    margin-bottom: 3px;
+    color: rgb(29, 21, 9);
+    height: 75px;
+}

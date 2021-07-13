@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -9,6 +9,8 @@ import { BudgetManagerComponent } from './budget-manager/budget-manager.componen
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { WorkoutPlanComponent } from './workout-plan/workout-plan.component';
 import { RegisterComponent } from './register/register.component';
+import { BudgetHomeComponent } from './budget-home/budget-home.component';
+import { WalletdetailsComponent } from './budget-home/walletdetails/walletdetails.component';
 
 
 
@@ -21,12 +23,15 @@ import { RegisterComponent } from './register/register.component';
     TodoListComponent,
     WorkoutPlanComponent,
     RegisterComponent,
+    BudgetHomeComponent,
+    WalletdetailsComponent,
  
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

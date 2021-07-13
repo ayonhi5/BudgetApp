@@ -1,18 +1,39 @@
-<div class="container-fluid bg-dark">
-  <div class="h-100 p-5  bg-dark text-center">
-    <h2>Welcome to your Budget Manager !</h2>
-    <p>Log your income and expenses and manage your funds </p>
+<div style="text-align: center;">
+
+
+  <div class="p-5 text-white bg-dark rounded-3">
+    <h2>Welcome To your Budget Manager</h2>
+    <p>Create Your Wallet in an instant !</p>
   </div>
+</div>
 
 
-  <div class="bg-dark text-secondary px-4 text-center">
-    <h1 class="display-5 ">Current Budget</h1>
 
-    <p class="fs-2 mb-6">{{ Amount }}</p>
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      <button type="button" class="btn btn-outline-light btn-lg px-4">Add income</button>
-      <button type="button" class="btn btn-outline-light btn-lg px-4">Add Expense</button>
+
+<div class="bg-dark text-secondary px-4 text-center" >
+  
+
+<div class="container bg-dark text-dark" style="width: 25%;">
+  <form   (ngSubmit)="onSubmitWallet()"  #wallet="ngForm">
+    
+    <h1 class="h3 mb-3 fw-normal text-white">Wallet Details : </h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control bg-light walletinput" ngModel name="WalletName" id="WalletName" placeholder="Wallet Name" required>
+      <label for="WalletName">Wallet Name :</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control bg-light walletinput" ngModel name="WalletDetails" id="WalletDetails" placeholder="Wallet Description" required>
+      <label for="WalletDetails">Wallet Details :</label>
     </div>
 
-  </div>
+    <button [disabled]="!wallet.valid" class="w-100 btn btn-lg btn-primary" style="width: 20%;" type="submit" >Create Wallet</button>
+
+    
+  </form>
+
+</div>
+
+
+
 </div>
