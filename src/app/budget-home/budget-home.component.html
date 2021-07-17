@@ -6,7 +6,19 @@
         <p>Create a wallet and start tracking your expenses or view your existing wallets managing your funds</p>
     </div>
 </div>
+<div class="container border" style="width:10%;height: 150px;" *ngFor="let data of walletdata">
+    <div class="container">
 
+        <p style="text-align: center;margin-top: 10px;">
+            {{walletdata.walletname}}
+        </p>
+        <p style="text-align: center;margin-top: 10px;">
+            {{walletdata.walletdescription}}
+        </p>
+
+    </div>   
+    
+</div>
 
 <div class="container border" style="width:10%;height: 150px;">
     <div class="container">

@@ -10,38 +10,37 @@ import { BudgetHomeComponent } from '../budget-home/budget-home.component';
   styleUrls: ['./budget-manager.component.css']
 })
 export class BudgetManagerComponent implements OnInit {
-
+ err:boolean =false;
   @ViewChild('wallet') walletform: NgForm;
-  
+
   defaultFlow = "Income";
-  details:[{}]=[{}];
-  walletdetails:any;
-  //name: string;
-  //description: string;
-  //cashflow: string;
-  //amountdata: number;
+
+
+  walletdetails = new walletdata();
+
 
 
   constructor(private walletserv: CommonServiceService, private route: Router) { }
 
   ngOnInit(): void {
-    this.walletdetails =new walletdata();
-   console.log(this.details);
-   console.log(this.walletdetails.amount);
+    
   }
 
   onSubmitWallet() {
-   this.walletdetails.walletname=this.walletform.value.WalletName;
-   this.walletdetails.walletdescription=this.walletform.value.WalletDetails;
-   this.walletdetails.cashflowType=this.walletform.value.TypeofFlow;
-   this.walletdetails.amount=this.walletform.value.WalletAmount;
-   this.details.push(this.walletdetails);
-   console.log(this.details);
-   console.log(this.walletdetails);
-   this.walletserv.emitwallet=this.details;
+    this.walletdetails.walletname = this.walletform.value.WalletName;
+    this.walletdetails.walletdescription = this.walletform.value.WalletDetails;
+    this.walletserv.onCreateWallet(this.walletdetails).subscribe((result: walletdata) => {
+   if(result){
+     console.log(result);
     this.route.navigate(['budget']);
+   }else{
+     this.err=true;
+   }
+    });
+    
+
 
   }
-  
+
 
 }

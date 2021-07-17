@@ -13,13 +13,11 @@ export class Mydata{
 export class walletdata{
     walletname ?: string;
     walletdescription?: string;
-    cashflowType ?: string;
-    amount ?: number;
+    
     constructor(){
         this.walletname = '';        
         this.walletdescription='';
-        this.cashflowType='';
-        this.amount=0;
+        
 
     }
 }

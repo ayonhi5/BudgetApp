@@ -11,6 +11,7 @@ import { WorkoutPlanComponent } from './workout-plan/workout-plan.component';
 import { RegisterComponent } from './register/register.component';
 import { BudgetHomeComponent } from './budget-home/budget-home.component';
 import { WalletdetailsComponent } from './budget-home/walletdetails/walletdetails.component';
+import {  HttpClientModule } from '@angular/common/http';
 
 
 
@@ -31,7 +32,8 @@ import { WalletdetailsComponent } from './budget-home/walletdetails/walletdetail
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
